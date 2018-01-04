@@ -1,0 +1,19 @@
+{
+  "name": "hubot-random-events",
+  "version": "1.0.0",
+  "description": "Hubot script for scheduling events to be performed at a random time within a window",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danielfinke/hubot-random-events.git"
+  },
+  "author": "Daniel Finke <danielfinke2011@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danielfinke/hubot-random-events/issues"
+  },
+  "homepage": "https://github.com/danielfinke/hubot-random-events#readme"
+}
