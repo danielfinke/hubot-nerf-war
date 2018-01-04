@@ -14,9 +14,12 @@
 // Author:
 //   Daniel Finke <danielfinke2011@gmail.com>
 
+const Conversation = require('hubot-conversation');
 const RandomEvent = require('./RandomEvent.js');
 
 module.exports = (robot) => {
+    const conversationMgr = new Conversation(robot);
+
     /**
      * Get existing events from the robot brain
      *
@@ -67,11 +70,24 @@ module.exports = (robot) => {
      * Schedule a new random event
      */
     robot.respond(/schedule random event/i, res => {
-        // DUMMY
-        const sampleEvent = new RandomEvent();
-        sampleEvent.name = 'Sample Event';
-        saveEvent(sampleEvent);
+        res.send('What do you want the event to be called?');
+
+        const dialog = conversationMgr.startDialog(res);
+        dialog.addChoice(/.*/, res => {
+            handleNameEvent(dialog, res);
+        });
     });
+
+    /**
+     * Respond to a request to name a new event.
+     *
+     * @param {Dialog} dialog The ongoing dialog between robot and user
+     * @param {Object} res Robot-provided res object
+     */
+    function handleNameEvent(dialog, res) {
+        // DUMMY
+        res.send('You said the event should be called: ' + res.match[0]);
+    }
 
     /**
      * Delete an existing event

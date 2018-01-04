@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/danielfinke/hubot-random-events/issues"
   },
-  "homepage": "https://github.com/danielfinke/hubot-random-events#readme"
+  "homepage": "https://github.com/danielfinke/hubot-random-events#readme",
+  "dependencies": {
+    "hubot-conversation": "^1.1.1"
+  }
 }
