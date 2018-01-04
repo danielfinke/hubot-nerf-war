@@ -8,8 +8,9 @@
 class RandomEvent {
     constructor() {
         this.name = null;
-        this.earlyAnnounce = false;
         this.earlyAnnounceInterval = 0;
+        this.onEarlyAnnounce = null;
+        this.onTimeout = null;
     }
 
     toString() {
